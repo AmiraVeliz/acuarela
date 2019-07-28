@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import AcuarelasList from '../acuarelas/acuarelasList/acuarelaList';
-import { getAllAcuarelas } from '../../actions/acuarelaActions';
+import AquarellesList from '../aquarelles/aquarellesList/aquarellesList';
+import { getAllAquarelles } from '../../actions/aquarelleActions';
 
 import './home.css';
 
@@ -12,25 +12,24 @@ import {
   List,
   Segment,
 } from 'semantic-ui-react';
-import ResponsiveContainer from './responsiveContainer';
 
 
 class Home extends React.Component {
 
   componentWillMount = () => {
-    this.props.getAllAcuarelas();
+    this.props.getAllAquarelles();
   }
 
   render() {
     return (
-      <ResponsiveContainer>
+      <div>
         <Segment
           style={{ minHeight: 700, padding: '1em 0em' }}
         >
           <Container style={{paddingTop:'20px'}}>
             <Header as='h2'>Francisco Tomé</Header>&nbsp;<span>127 results</span>
-            <AcuarelasList
-              acuarelas={this.props.acuarelas}
+            <AquarellesList
+              aquarelles={this.props.aquarelles}
               loading={this.props.loading}
             />
           </Container>
@@ -69,19 +68,19 @@ class Home extends React.Component {
             </Grid>
           </Container>
         </Segment>
-      </ResponsiveContainer>
+      </div>
     );
   }
 }
 
 
 const mapStateToProps = state => ({
-  acuarelas: state.acuarelaStore.acuarelas,
-  loading: state.acuarelaStore.loading,
+  aquarelles: state.aquarelleStore.aquarelles,
+  loading: state.aquarelleStore.loading,
 })
 
 const mapDispatchToProps = dispatch => ({
-  getAllAcuarelas: () => getAllAcuarelas(dispatch),
+  getAllAquarelles: () => getAllAquarelles(dispatch),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

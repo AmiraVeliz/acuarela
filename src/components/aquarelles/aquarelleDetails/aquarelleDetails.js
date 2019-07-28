@@ -3,18 +3,18 @@ import { Grid, Image, Rating, Header, Button, Segment } from 'semantic-ui-react'
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import { getAcuarelaDetails } from '../../../actions/acuarelaActions';
+import { getAquarelleDetails } from '../../../actions/aquarelleActions';
 
 // import './acuarela.css';
 
-class AcuarelaDetail extends React.Component {
+class AquarelleDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   componentDidMount() {
-    this.props.getAcuarelaDetails(this.props.match.params.id);
+    this.props.getAquarelleDetails(this.props.match.params.id);
   }
 
   handleGoBack = () => {
@@ -22,15 +22,15 @@ class AcuarelaDetail extends React.Component {
   }
 
   handleEdit = () => {
-    console.log('edit acuarela');
+    console.log('edit aquarelle');
   }
 
   handleDelete = () => {
-    console.log('delete acuarela');
+    console.log('delete aquarella');
   }
 
   render() {
-    const { name, createdDate, technique, material, country, rating, images } = this.props.acuarela;
+    const { name, createdDate, technique, material, country, rating, images } = this.props.aquarelle;
 
     return (
       <Segment style={{ minHeight: 500, padding: '50px' }}>
@@ -61,12 +61,12 @@ class AcuarelaDetail extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  acuarela: state.acuarelaStore.acuarela,
-  loading: state.acuarelaStore.loading
+  aquarelle: state.aquarelleStore.aquarelle,
+  loading: state.aquarelleStore.loading
 })
 
 const mapDispatchToProps = dispatch => ({
-  getAcuarelaDetails: (acuarelaId) => getAcuarelaDetails(dispatch, acuarelaId)
+  getAquarelleDetails: (aquarelleId) => getAquarelleDetails(dispatch, aquarelleId)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AcuarelaDetail));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AquarelleDetails));

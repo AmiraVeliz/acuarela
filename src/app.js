@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import AcuarelaDetail from './components/acuarelas/acuarelaDetail/acuarelaDetail';
+import AquarelleDetails from './components/aquarelles/aquarelleDetails/aquarelleDetails';
 import About from './components/about';
-import AcuarelaFormPage from './components/acuarelas/acuarelaFormPage/acuarelaFormPage';
-import AcuarelasByUser from './components/acuarelas/acuarelasByUser/acuarelasByUser';
+import AquarelleFormPage from './components/aquarelles/aquarelleFormPage/aquarelleFormPage';
+import AquarellesByUser from './components/aquarelles/aquarellesByUser/aquarellesByUser';
 import ErrorComponent from './components/error';
 import Contact from './components/contact';
 import Home from './components/home/home';
@@ -33,10 +33,10 @@ class App extends Component {
             <Route path='/' component={Home} exact />
             {/* <PrivateRoute authed={this.props.user.isLoggedIn} path='/history' component={HistoryComponent} /> */}
             <Route path='/about' component={About} />
-            <Route path='/acuarela-detail/:id' component={AcuarelaDetail} />
-            <PrivateRoute authed={this.props.user.isLoggedIn} path='/acuarelas-user' component={AcuarelasByUser} />
+            <Route path='/aquarelle-detail/:id' component={AquarelleDetails} />
+            <PrivateRoute authed={this.props.user.isLoggedIn} path='/aquarelles-user' component={AquarellesByUser} />
             <Route path='/contact' component={Contact} />
-            <PrivateRoute authed={this.props.user.isLoggedIn} path='/acuarela-form' component={AcuarelaFormPage} />
+            <PrivateRoute authed={this.props.user.isLoggedIn} path='/aquarelle-form' component={AquarelleFormPage} />
             <Route path='/login' component={Login} />
             <Route path='/signup' component={Signup} />
             <Route component={ErrorComponent} />

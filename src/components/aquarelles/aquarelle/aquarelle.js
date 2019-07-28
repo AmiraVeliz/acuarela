@@ -2,16 +2,16 @@ import { Grid, Image, Rating, Header, Icon } from 'semantic-ui-react';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import './acuarela.css';
+import './aquarelle.css';
 
-class Acuarela extends React.Component {
+class Aquarelle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   handleViewDetail = () => {
-    this.props.history.push(`/acuarela-detail/${this.props.id}`);
+    this.props.history.push(`/aquarelle-detail/${this.props.id}`);
   }
 
   render() {
@@ -28,4 +28,4 @@ class Acuarela extends React.Component {
   }
 }
 
-export default withRouter(Acuarela);
+export default withRouter(Aquarelle);

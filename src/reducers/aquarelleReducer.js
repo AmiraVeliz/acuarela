@@ -1,103 +1,103 @@
 import Immutable from 'seamless-immutable';
 
 const initalState = Immutable({
-  acuarela: {},
-  acuarelas: [],
+  aquarelle: {},
+  aquarelles: [],
   loading: false
 });
 
 export default (state = initalState, action = {}) => {
   switch (action.type) {
-    case 'FETCH_ACUARELAS_START': {
+    case 'FETCH_AQUARELLES_START': {
       return state.merge({
         loading: true
       });
     }
 
-    case 'FETCH_ACUARELAS_FULFILLED': {
+    case 'FETCH_AQUARELLES_FULFILLED': {
       return state.merge({
-        acuarelas: action.payload.data.data,
+        aquarelles: action.payload.data.data,
         loading: false
       });
     }
 
-    case 'FETCH_ACUARELAS_REJECTED': {
+    case 'FETCH_AQUARELLES_REJECTED': {
       return state.merge({
         loading: false,
       });
     }
 
-    case 'FETCH_ACUARELAS_BY_USER_START': {
+    case 'FETCH_AQUARELLES_BY_USER_START': {
       return state.merge({
         loading: true
       });
     }
 
-    case 'FETCH_ACUARELAS_BY_USER_FULFILLED': {
+    case 'FETCH_AQUARELLES_BY_USER_FULFILLED': {
       return state.merge({
-        acuarelas: action.payload.data.data,
+        aquarelles: action.payload.data.data,
         loading: false
       });
     }
 
-    case 'FETCH_ACUARELAS_BY_USER_REJECTED': {
+    case 'FETCH_AQUARELLES_BY_USER_REJECTED': {
       return state.merge({
         loading: false
       });
     }
 
-    case 'SAVE_ACUARELA_START': {
+    case 'SAVE_AQUARELLE_START': {
       return state.merge({
         loading: true
       });
     }
 
-    case 'SAVE_ACUARELA_FULFILLED': {
+    case 'SAVE_AQUARELLE_FULFILLED': {
       return state.merge({
-        acuarela: action.payload.data.data,
-        acuarelas: [...state.acuarelas, action.payload.data.data],
+        aquarelle: action.payload.data.data,
+        aquarelles: [...state.aquarelles, action.payload.data.data],
         loading: false
       });
     }
 
-    case 'SAVE_ACUARELA_REJECTED': {
+    case 'SAVE_AQUARELLE_REJECTED': {
       return state.merge({
         loading: false
       });
     }
 
-    case 'LOADING_ACUARELA_STARTS': {
+    case 'LOADING_AQUARELLE_STARTS': {
       return state.merge({
         loading: true
       });
     }
 
-    case 'LOADING_ACUARELA_SUCCESS': {
+    case 'LOADING_AQUARELLE_SUCCESS': {
       return state.merge({
         loading: false
       });
     }
 
-    case 'LOADING_ACUARELA_ERROR': {
+    case 'LOADING_AQUARELLE_ERROR': {
       return state.merge({
         loading: false,
       });
     }
 
-    case 'FETCH_ACUARELA_DETAILS_START': {
+    case 'FETCH_AQUARELLE_DETAILS_START': {
       return state.merge({
         loading: true
       });
     }
 
-    case 'FETCH_ACUARELA_DETAILS_FULFILLED': {
+    case 'FETCH_AQUARELLE_DETAILS_FULFILLED': {
       return state.merge({
-        acuarela: action.payload.data.data,
+        aquarelle: action.payload.data.data,
         loading: false
       });
     }
 
-    case 'FETCH_ACUARELA_DETAILS_REJECTED': {
+    case 'FETCH_AQUARELLE_DETAILS_REJECTED': {
       return state.merge({
         loading: false,
       });

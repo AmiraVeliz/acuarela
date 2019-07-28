@@ -3,21 +3,21 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Segment } from 'semantic-ui-react';
 
-import AcuarelaForm from '../acuarelaForm/acuarelaForm';
-import { saveAcuarela } from '../../../actions/acuarelaActions';
+import AquarelleForm from '../aquarelleForm/aquarelleForm';
+import { saveAquarelle } from '../../../actions/aquarelleActions';
 
 //import './AcuarelaFormPage.css';
 
-//TODO also to update acuarela
-class AcuarelaFormPage extends React.Component {
+//TODO also to update aquarelle
+class AquarelleFormPage extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {};
   }
 
-  handleSubmit = (acuarela) => {
-    this.props.saveAcuarela(acuarela);
+  handleSubmit = (aquarelle) => {
+    this.props.saveAquarelle(aquarelle);
     this.props.history.push('/');
 
     /*if(!contact._id) {
@@ -38,7 +38,7 @@ class AcuarelaFormPage extends React.Component {
   render() {
     return (
       <Segment style={{ minHeight: 500, padding: '50px' }}>
-        <AcuarelaForm
+        <AquarelleForm
           // acuarela={this.props.acuarela}
           loading={this.props.loading}
           onSubmit={this.handleSubmit}
@@ -50,11 +50,11 @@ class AcuarelaFormPage extends React.Component {
 
 const mapStateToProps = state => ({
   // acuarela: state.acuarelaStore.acuarela,
-  loading: state.acuarelaStore.loading
+  loading: state.aquarelleStore.loading
 })
 
 const mapDispatchToProps = dispatch => ({
-  saveAcuarela: (acuarela) => saveAcuarela(dispatch, acuarela)
+  saveAquarelle: (aquarelle) => saveAquarelle(dispatch, aquarelle)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AcuarelaFormPage));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AquarelleFormPage));

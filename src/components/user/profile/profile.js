@@ -21,8 +21,8 @@ class Profile extends React.Component {
       this.props.history.push('/');
     }
     //TODO user switch
-    if (value === 'myAcuarelas') {
-      this.props.history.push('/acuarelas-user');
+    if (value === 'myAquarelles') {
+      this.props.history.push('/aquarelles-user');
     }
   }
 
@@ -50,7 +50,7 @@ class Profile extends React.Component {
         disabled: true,
       },
       { key: 'settings', text: 'Settings', value: 'settings' },
-      { key: 'myAcuarelas', text: 'My acuarelas', value: 'myAcuarelas' },
+      { key: 'myAquarelles', text: 'My aquarelles', value: 'myAquarelles' },
       { key: 'logout', text: 'Sign Out', value: 'logout' },
     ];
 

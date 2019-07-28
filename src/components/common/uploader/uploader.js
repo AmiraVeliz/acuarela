@@ -10,7 +10,7 @@ import {
   errorLoadingPictures,
   successLoadingPictures,
   startLoadingPictures
-} from '../../../actions/acuarelaActions';
+} from '../../../actions/aquarelleActions';
 
 //TODO how to handle this?
 var config = {

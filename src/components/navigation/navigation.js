@@ -21,8 +21,8 @@ class Navigation extends React.Component {
     }
   }
 
-  handleUploadAcuarela = () => {
-    this.props.history.push('/acuarela-form');
+  handleUploadAquarelle = () => {
+    this.props.history.push('/aquarelle-form');
   }
 
   handleLogin = () => {
@@ -43,7 +43,7 @@ class Navigation extends React.Component {
 
     return (
       <div
-        // style={{ paddingBottom: '13px' }}
+        style={{ paddingBottom: '13px' }}
       >
         <Menu 
           fixed={fixed ? 'top' : null}
@@ -79,7 +79,7 @@ class Navigation extends React.Component {
                   {/*TODO <Input icon='search' placeholder='Search...' /> */}
                 </Menu.Item>
                 <Menu.Item>
-                  <Icon name='upload' onClick={this.handleUploadAcuarela}/>
+                  <Icon name='upload' onClick={this.handleUploadAquarelle}/>
                 </Menu.Item>
                 <Menu.Item>
                   <Profile />

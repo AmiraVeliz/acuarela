@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import AcuarelaReducer from './acuarelaReducer';
+import AquarelleReducer from './aquarelleReducer';
 import UserReducer from './userReducer';
 
 const reducers = {
-  acuarelaStore: AcuarelaReducer,
+  aquarelleStore: AquarelleReducer,
   userStore: UserReducer
 }
 

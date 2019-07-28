@@ -2,10 +2,10 @@ import React from 'react';
 import { Grid, Message, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
-import Acuarela from '../acuarela/acuarela';
+import Aquarelle from '../aquarelle/aquarelle';
 
-export default function AcuarelasList({
-  acuarelas,
+export default function AquarellesList({
+  aquarelles,
   loading
 }){
 
@@ -14,7 +14,7 @@ export default function AcuarelasList({
       <Icon name='circle notched' loading />
       <Message.Content>
           <Message.Header>Just one second</Message.Header>
-          We are fetching all acuarelas...
+          We are fetching all aquarelles...
       </Message.Content>
     </Message>
   );
@@ -23,9 +23,9 @@ export default function AcuarelasList({
     <Message icon info>
       <Icon name='warning circle' />
       <Message.Content>
-          <Message.Header>No acuarelas found</Message.Header>
-          <p>Add some new acuarelas to get started...</p>
-          <Link to={'/acuarela-form'} className="ui button primary">Add New Acuarela</Link>
+          <Message.Header>No aquarelles found</Message.Header>
+          <p>Add some new aquarelles to get started...</p>
+          <Link to={'/aquarelle-form'} className="ui button primary">Add New Aquarelle</Link>
       </Message.Content>
     </Message>
   );
@@ -39,17 +39,17 @@ export default function AcuarelasList({
   //   </Message>
   // );
 
-  const acuarelasList = (
+  const aquarellesList = (
     <Grid doubling columns={6}>
       {
-        acuarelas.map((acuarela, index) => {
-          return <Acuarela
+        aquarelles.map((aquarelle, index) => {
+          return <Aquarelle
             key={index}
-            id={acuarela._id}
-            name={acuarela.name}
-            author={acuarela.author}
-            rating={acuarela.rating}
-            pathImage={(acuarela.images && acuarela.images.length)? acuarela.images[0].url : 'https://react.semantic-ui.com/images/wireframe/image.png'}
+            id={aquarelle._id}
+            name={aquarelle.name}
+            author={aquarelle.author}
+            rating={aquarelle.rating}
+            pathImage={(aquarelle.images && aquarelle.images.length)? aquarelle.images[0].url : 'https://react.semantic-ui.com/images/wireframe/image.png'}
           />;
         })
       }
@@ -59,8 +59,8 @@ export default function AcuarelasList({
   return (
     <div>
       { loading && loadingMessage }
-      { acuarelas.length === 0 && !loading && emptyMessage }
-      { acuarelas.length > 0 && acuarelasList }
+      { aquarelles.length === 0 && !loading && emptyMessage }
+      { aquarelles.length > 0 && aquarellesList }
     </div>
   );
 }

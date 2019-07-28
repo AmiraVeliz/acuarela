@@ -26,10 +26,10 @@ const techniqueOptions = [
   { key: 'cl', value: 'cl', text: 'Colors' },
 ];
 
-class AcuarelaForm extends Component {
+class AquarelleForm extends Component {
 
   static propTypes = {
-    acuarela: PropTypes.object,
+    aquarelle: PropTypes.object,
     loading: PropTypes.bool.isRequired,
   };
 
@@ -95,7 +95,7 @@ class AcuarelaForm extends Component {
     return (
       <Grid centered columns={2}>
         <Grid.Column>
-          <h2>{'New Acuarela'}</h2>
+          <h2>{'New Aquarelle'}</h2>
           {/* <h1 style={{marginTop:"1em"}}>{acuarela._id ? 'Edit Contact' : 'Add New Contact'}</h1> */}
           <Form onSubmit={this.handleSubmit} loading={loading} error>
             <CustomTextInput
@@ -155,4 +155,4 @@ class AcuarelaForm extends Component {
   }
 }
 
-export default AcuarelaForm;
+export default AquarelleForm;
