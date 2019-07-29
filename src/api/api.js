@@ -2,7 +2,7 @@ import axios from 'axios';
 import UserSession from '../actions/userSession/userSession';
 import HandleError from '../actions/handleError'
 
-const baseUrl = 'http://localhost:1234';
+const baseUrl = 'http://localhost:8080';
 
 const instance = axios.create();
 

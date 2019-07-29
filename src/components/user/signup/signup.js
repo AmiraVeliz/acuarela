@@ -99,7 +99,7 @@ class Signup extends React.Component {
             <Icon.Group size='large'>
               <Icon name='paint brush' />
             </Icon.Group>
-            ACUAS
+            AQUARELLS
           </Header>
           <Form size='large' loading={loading} onSubmit={this.handleSubmit} error>
             <Segment>
@@ -194,6 +194,8 @@ class Signup extends React.Component {
           <Message>
             <Link to='/login'>Back to login</Link>
           </Message>
+          <br/>
+          <Link to='/'>Close x</Link>
           </Grid.Column>
         </Grid>
       </div>

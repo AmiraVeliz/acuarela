@@ -51,7 +51,7 @@ class Login extends React.Component {
             <Icon.Group size='large'>
               <Icon name='paint brush' />
             </Icon.Group>
-            ACUAS
+            AQUARELLS
           </Header>
           <Form size='large' loading={loading} onSubmit={this.handleSubmit} error>
             <Segment>
@@ -83,6 +83,8 @@ class Login extends React.Component {
           <Message>
             New to us? <Link to='/signup'>Sign Up</Link>
           </Message>
+          <br/>
+          <Link to='/'>Close x</Link>
         </Grid.Column>
       </Grid>
     );
