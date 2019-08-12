@@ -24,7 +24,7 @@ export default function AquarellesList({
       <Icon name='warning circle' />
       <Message.Content>
           <Message.Header>No aquarelles found</Message.Header>
-          <p>Add some new aquarelles to get started...</p>
+          <p>You can add some new aquarelles to get started...</p>
           <Link to={'/aquarelle-form'} className="ui button primary">Add New Aquarelle</Link>
       </Message.Content>
     </Message>

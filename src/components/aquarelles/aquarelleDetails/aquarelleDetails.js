@@ -30,7 +30,7 @@ class AquarelleDetails extends React.Component {
   }
 
   render() {
-    const { name, createdDate, technique, material, country, rating, images } = this.props.aquarelle;
+    const { name, createdDate, technique, material, country, rating, images, authorId } = this.props.aquarelle;
 
     return (
       <Segment style={{ minHeight: 500, padding: '50px' }}>
@@ -50,10 +50,13 @@ class AquarelleDetails extends React.Component {
             <br /> {material}
             <br /> {country}
           </Grid.Column>
-          <Grid.Row>
-            <Button onClick={this.handleEdit}>Edit</Button>
-            <Button onClick={this.handleDelete}>Delete</Button>
-          </Grid.Row>
+          { 
+            this.props.user.data._id === authorId? 
+            (<Grid.Row>
+              <Button onClick={this.handleEdit}>Edit</Button>
+              <Button onClick={this.handleDelete}>Delete</Button>
+            </Grid.Row>) : ''
+          }
         </Grid>
       </Segment>
     );
@@ -62,7 +65,8 @@ class AquarelleDetails extends React.Component {
 
 const mapStateToProps = state => ({
   aquarelle: state.aquarelleStore.aquarelle,
-  loading: state.aquarelleStore.loading
+  loading: state.aquarelleStore.loading,
+  user: state.userStore.user
 })
 
 const mapDispatchToProps = dispatch => ({

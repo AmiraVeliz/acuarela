@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import AquarellesList from '../aquarelles/aquarellesList/aquarellesList';
 import { getAllAquarelles } from '../../actions/aquarelleActions';
+import SearchComponent from '../common/search/search';
 
 import './home.css';
 
@@ -12,24 +13,73 @@ import {
   List,
   Segment,
 } from 'semantic-ui-react';
+import aquarelle from '../aquarelles/aquarelle/aquarelle';
+
 
 
 class Home extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      filteredAquarelles: [],
+      isLoadingSearch: false,
+      value: '',
+      results: []
+    }
+  }
 
   componentWillMount = () => {
     this.props.getAllAquarelles();
   }
 
+  componentDidMount() {
+    const { aquarelles } = this.props;
+    this.setState({ filteredAquarelles: aquarelles });
+  }
+
+  handleSearchChange = (searchValue) => {
+    searchValue = searchValue.toLowerCase();
+
+    if (this.props.aquarelles.length) {
+      this.setState({ isLoading: true, value: searchValue })
+
+      setTimeout(() => {
+        const ress = this.props.aquarelles.filter(aquarelle => {
+          const name = aquarelle.name.toLowerCase();
+          return name.includes(searchValue)
+        });
+
+        this.setState({
+          isLoading: false,
+          filteredAquarelles: ress,
+        })
+      }, 300)
+
+    }
+  }
+
   render() {
+    const { isLoadingSearch, value, results, filteredAquarelles } = this.state
+
+    let aquarellesToShow = this.state.value? filteredAquarelles: this.props.aquarelles;
+
     return (
       <div>
         <Segment
           style={{ minHeight: 700, padding: '1em 0em' }}
         >
           <Container style={{paddingTop:'20px'}}>
+            <SearchComponent 
+              isLoading={isLoadingSearch} 
+              value={value}
+              results={results}
+              handleSearchChange={this.handleSearchChange}
+            />
             <Header as='h2'>Francisco Tomé</Header>&nbsp;<span>127 results</span>
             <AquarellesList
-              aquarelles={this.props.aquarelles}
+              aquarelles={aquarellesToShow}
               loading={this.props.loading}
             />
           </Container>
