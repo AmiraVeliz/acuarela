@@ -13,9 +13,6 @@ import {
   List,
   Segment,
 } from 'semantic-ui-react';
-import aquarelle from '../aquarelles/aquarelle/aquarelle';
-
-
 
 class Home extends React.Component {
 
@@ -46,14 +43,14 @@ class Home extends React.Component {
       this.setState({ isLoading: true, value: searchValue })
 
       setTimeout(() => {
-        const ress = this.props.aquarelles.filter(aquarelle => {
+        const results = this.props.aquarelles.filter(aquarelle => {
           const name = aquarelle.name.toLowerCase();
           return name.includes(searchValue)
         });
 
         this.setState({
           isLoading: false,
-          filteredAquarelles: ress,
+          filteredAquarelles: results,
         })
       }, 300)
 
